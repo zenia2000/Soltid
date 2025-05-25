@@ -1,0 +1,96 @@
+/*{
+color: #770755; Lilla
+color: #DB2348; rød
+color: #dce9b2; æggeskal
+color: #FF8C11; Orange
+color: #FFBF11; Gul
+color: #563103; Brun
+}
+*/
+h1{
+    color: #770755;
+}
+
+body{
+    background-color: #dce9b2;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FF8C11;
+}
+
+li{
+    float: left;
+    padding: 10px;
+}
+
+li a, .dropbtn{
+    display: inline-block;
+    color: #563103;
+    background-color: #FFBF11;
+    border: #563103 solid;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+li a:hover:not(.active), .dropdown:hover .dropbtn {
+    background-color: #dce9b2;
+    color: #563103;
+    border: #563103 solid;
+}
+
+.active{
+    background-color: #563103;
+    color: #FFBF11;
+    border: #FFBF11 solid;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFBF11;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #563103;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #FF8C11;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+li a img {
+    width: 5vw;
+}
+
+.dineFormat {
+    display: flex;
+    border: #563103 solid;
+}
+
+.dineFormat p{
+    margin-left: 2vw;
+}
+
+.dineFormat img{
+    width: 20vw;
+}

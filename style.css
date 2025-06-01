@@ -19,6 +19,10 @@ body{
     background-color: #dce9b2;
 }
 
+.picSize img{
+    height: 35vh;
+}
+
 ul{
     list-style-type: none;
     margin: 0;

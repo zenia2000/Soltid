@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Hjem - Soltid</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
 </head>
 <body>
 
@@ -18,7 +18,7 @@
 <nav>
     <ul>
         <li><a href="index.html"><img src="images/Artboard%208.png"></a> </li>
-        <li><a href="booking.html">Booking</a> </li>
+        <li><a class="active" href="booking.html">Booking</a> </li>
         <li><a href="rules.html">Regler</a> </li>
         <li><a href="future.html">Future</a> </li>
 
@@ -31,10 +31,10 @@
             </div>
         </li>
 
-
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn, active">Spisesteder</a>
+            <a href="javascript:void(0)" class="dropbtn">Værd at se</a>
             <div class="dropdown-content">
+                <a href="dining.html">Spisesteder</a>
                 <a href="sights.html">Seværdigheder</a>
 
             </div>
@@ -44,18 +44,29 @@
     </ul>
 </nav>
 
-<h2>Spisesteder</h2>
-
-<div class="dineFormat">
-    <p>Spisested 1 <br>
-    <br>
-        Beskrivelse... <br>
-    <br>
-    <a href="#">Link til hjemmeside</a>
-    </p>
-</div>
+<h1>Oversigt:</h1>
+<p id="data"></p>
 
 <script src="script.js"></script>
+
+<script>
+   const json = localStorage.getItem('form', 'form2'); <!-- Hent info form2 fra json localt -->
+  // const obj = JSON.parse(json); <!-- Lav Json string tilbage til javascript object-->
+
+     /*     let info = "";
+          for (let x in obj) <!-- for loop, for hver genstand i obj, print det på html siden -->
+          {
+              info += obj[x] + " ";
+              console.log()
+          }
+*/
+       //const markup = ${key}: ${obj[key]}
+
+       document.getElementById('data').innerHTML += json;
+
+
+</script>
+
 </body>
 </html>
 

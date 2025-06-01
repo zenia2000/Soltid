@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Hjem - Soltid</title>
     <link rel="stylesheet" href="style.css">
-
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -44,40 +44,44 @@
     </ul>
 </nav>
 
-<form> <!-- Hvor sendes den hen? -->
-    <label for="location">Vil gerne booke:</label>
-    <select id="location" name="location">
-        <option value="Tba">...</option>
-        <option value="Borg">Borg</option>
-    </select>
+<form>
 
-    <label for="startDate">Fra:</label><br>
-    <input type="date" id="startDate" min="2025-06-01" required><br><br>
+    <label for="fName">Fornavn:</label><br>
+    <input type="text" id="fName" required><br><br>
 
-    <label for="endDate">Til:</label><br>
-    <input type="date" id="endDate" min="2025-06-02" required><br><br>
+    <label for="address">Adresse:</label><br>
+    <input type="text" id="address" required><br><br>
 
-    <label for="price">Pris:</label><br>
-    <input type="number" id="price" value="500" readonly><br><br>
+    <label for="postNr">Post nr.:</label><br>
+    <input type="text" id="postNr" size="4" required><br><br>
+
+    <label for="city">By:</label><br>
+    <input type="text" id="city" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" required><br><br>
+
+    <label for="phone">Tlf:</label><br>
+    <input type="tel" id="phone" required><br><br>
 
 
     <input type="submit" value="Gem og fortsæt">
 </form>
 
-<script src="script.js"></script>
 
 <script>
-    const form = document.querySelector('form');
+    const form2 = document.querySelector('form'); <!-- lav en konstant ved navn form2 -->
 
-    form.addEventListener('submit', (e) => { <!-- form lytter efter der trykkes på submit -->
+    form2.addEventListener('submit', (e) => { <!-- form2 lytter efter der trykkes på submit -->
         e.preventDefault() // afbryd html forms normale adfærd
-        const fdbooking = new FormData(form);
-        const obj = Object.fromEntries(fdbooking)
+        const fdperson = new FormData(form2);
+        const obj = Object.fromEntries(fdperson)
 
         const json = JSON.stringify(obj); //lav javascript object til json script (tekst)
         localStorage.setItem('form', json); //gem lokalt i local storage.
+        console.log()
 
-        location.href = "personInfo.html" //send bruger til personInfo side
+        window.location.href = "confirm.html" //send bruger til confirm side
 
     })
 </script>

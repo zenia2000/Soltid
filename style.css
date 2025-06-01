@@ -7,8 +7,12 @@ color: #FFBF11; Gul
 color: #563103; Brun
 }
 */
-h1{
+h1, h2, h3, h4{
     color: #770755;
+}
+
+p{
+    color: #563103;
 }
 
 body{

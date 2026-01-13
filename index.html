@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hjem - Soltid</title>
     <link rel="stylesheet" href="style.css">
 
@@ -15,7 +16,12 @@
         Borg29@outlook.dk</a>
         , så vender vi snarest tilbage</h3>
 
-<nav>
+<nav role="navigation" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     <ul>
         <li><a class="active" href="index.html"><img src="images/Artboard%208.png"></a> </li>
         <li><a href="booking.html">Booking</a> </li>
@@ -23,19 +29,19 @@
         <li><a href="future.html">Future</a> </li>
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Corners</a>
-            <div class="dropdown-content">
-                <a href="gnuen.html">Gnuens Mancave</a>
-                <a href="mommabear.html">Momma Bears Krea</a>
+            <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">Corners</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="gnuen.html">Gnuens Mancave</a>
+                <a role="menuitem" tabindex="-1" href="mommabear.html">Momma Bears Krea</a>
 
             </div>
         </li>
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Værd at se</a>
-            <div class="dropdown-content">
-                <a href="dining.html">Spisesteder</a>
-                <a href="sights.html">Seværdigheder</a>
+            <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">Værd at se</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="dining.html">Spisesteder</a>
+                <a role="menuitem" tabindex="-1" href="sights.html">Seværdigheder</a>
 
             </div>
         </li>
@@ -43,20 +49,30 @@
         <li><a href="about.html">Om Os</a> </li>
     </ul>
 </nav>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+
 <div class="picSize">
 <img src="images/udefra1.jpg"><img src="images/have1.jpg"><img src="images/udefra2.jpg"><img src="images/have2.jpg">
 </div>
-<h1>Solsikker og solnedgange</h1>
+<h1 class="page-title">🌻 Solsikker og solnedgange</h1>
 
-<p>Hjerteligt velkommen til Soltids hjemmeside. Det glæder os, at du har slået et smut forbi os. Vi tilbyder overnatninger i det herlige Sønderjylland.<br>
-    Fokus på komfort, ro og mulighed for skærmning. Se en solsikke, vær en solsikke, tænd et bål og se en solnedgang.<br>
-    Håber du finder noget der frister og kontakt os gerne, hvis du har nogen spørgsmål.<br>
-<br>
-<br>
-    Jette & Jan
-</p>
+<div class="info-box">
+    <section>
+        <p>Hjerteligt velkommen til Soltids hjemmeside. Det glæder os, at du har slået et smut forbi os. Vi tilbyder overnatninger i det herlige Sønderjylland.</p>
+        <p>Fokus på komfort, ro og mulighed for skærmning. Se en solsikke, vær en solsikke, tænd et bål og se en solnedgang.</p>
+        <p>Håber du finder noget der frister og kontakt os gerne, hvis du har nogen spørgsmål.</p>
+        <p style="margin-top: 1.5rem; font-style: italic;">Jette & Jan</p>
+    </section>
+</div>
 
-<!-- <script src="script.js"></script> -->
+<!-- site script -->
+<button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+
+<script src="script.js"></script>
+
+</main>
 
 
 

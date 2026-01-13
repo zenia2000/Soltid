@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hjem - Soltid</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
 </head>
 <body>
 
@@ -15,7 +16,12 @@
         Borg29@outlook.dk</a>
         , så vender vi snarest tilbage</h3>
 
-<nav>
+<nav role="navigation" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     <ul>
         <li><a href="index.html"><img src="images/Artboard%208.png"></a> </li>
         <li><a href="booking.html">Booking</a> </li>
@@ -23,18 +29,18 @@
         <li><a href="future.html">Future</a> </li>
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Corners</a>
-            <div class="dropdown-content">
-                <a href="gnuen.html">Gnuens Mancave</a>
-                <a href="mommabear.html">Momma Bears Krea</a>
+            <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">Corners</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="gnuen.html">Gnuens Mancave</a>
+                <a role="menuitem" tabindex="-1" href="mommabear.html">Momma Bears Krea</a>
 
             </div>
         </li>
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn, active">Seværdigheder</a>
-            <div class="dropdown-content">
-                <a href="dining.html">Spisesteder</a>
+            <button class="dropbtn active" type="button" aria-haspopup="true" aria-expanded="false">Seværdigheder</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="dining.html">Spisesteder</a>
 
             </div>
         </li>
@@ -44,91 +50,86 @@
 </nav>
 
 
-<h2>Seværdigheder</h2>
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
 
-<div class="dineFormat">
-    <p>Glad Zoo<br>
+<h2 class="page-title">🎭 Seværdigheder</h2>
 
-        <br>
-        <a href="https://www.gladzoo.dk">Link til hjemmeside</a>
-    </p>
-</div>
-<br>
-<div class="dineFormat">
-    <p>Legoland<br>
-        <br>
-
-        <a href="https://www.legoland.dk">Link til hjemmeside</a>
-    </p>
-</div>
-<br>
-<div class="dineFormat">
-    <p>Vadehavscentret<br>
-        <br>
-
-        <a href="https://www.vadehavscentret.dk">Link til hjemmeside</a>
-    </p>
-</div>
-<br>
-<div class="dineFormat">
-    <p>Nationalpark Vadehavet<br>
-
-        <br>
-        <a href="https://www.nationalparkvadehavet.dk">Link til hjemmeside</a>
-    </p>
-</div>
-<br>
-<div class="dineFormat">
-    <p>Lego House<br>
-        <br>
-
-        <a href="https://www.legohouse.com">Link til hjemmeside</a>
-    </p>
-</div>
-<br>
-<div class="dineFormat">
-    <p>Randers Regnskov<br>
-        <br>
-
-        <a href="https://www.regnskoven.dk">Link til hjemmeside</a>
-    </p>
-</div>
-<br>
-<div class="dineFormat">
-    <p>Frilandsmuseet Hjerl Hede<br>
-        <br>
-
-        <a href="https://www.hjerlhede.dk">Link til hjemmeside</a>
-    </p>
-</div>
-<br>
-<div class="dineFormat">
-    <p>Givskud Zoo<br>
-
-        <br>
-        <a href="https://www.givskudzoo.dk">Link til hjemmeside</a>
-    </p>
-</div>
-<br>
-<div class="dineFormat">
-    <p>Danfoss Universe<br>
-        <br>
-
-        <a href="https://www.universe.dk">Link til hjemmeside</a>
-    </p>
-</div>
-<br>
-<div class="dineFormat">
-    <p>Rømø og Omegn<br>
-        <br>
-
-        <a href="https://www.romo-tonder.dk">Link til hjemmeside</a>
-    </p>
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Glad Zoo</h3>
+        <p><a href="https://www.gladzoo.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
 </div>
 
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Legoland</h3>
+        <p><a href="https://www.legoland.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
+</div>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Vadehavscentret</h3>
+        <p><a href="https://www.vadehavscentret.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
+</div>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Nationalpark Vadehavet</h3>
+        <p><a href="https://www.nationalparkvadehavet.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
+</div>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Lego House</h3>
+        <p><a href="https://www.legohouse.com" target="_blank">Link til hjemmeside →</a></p>
+    </section>
+</div>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Randers Regnskov</h3>
+        <p><a href="https://www.regnskoven.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
+</div>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Frilandsmuseet Hjerl Hede</h3>
+        <p><a href="https://www.hjerlhede.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
+</div>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Givskud Zoo</h3>
+        <p><a href="https://www.givskudzoo.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
+</div>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Danfoss Universe</h3>
+        <p><a href="https://www.universe.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
+</div>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Rømø og Omegn</h3>
+        <p><a href="https://www.romo-tonder.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
+</div>
+
+</main>
 
 <script src="script.js"></script>
 
 </body>
+</html>
 </html>
 

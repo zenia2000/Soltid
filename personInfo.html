@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hjem - Soltid</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -15,7 +16,12 @@
         Borg29@outlook.dk</a>
         , så vender vi snarest tilbage</h3>
 
-<nav>
+<nav role="navigation" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     <ul>
         <li><a href="index.html"><img src="images/Artboard%208.png"></a> </li>
         <li><a class="active" href="booking.html">Booking</a> </li>
@@ -23,19 +29,19 @@
         <li><a href="future.html">Future</a> </li>
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Corners</a>
-            <div class="dropdown-content">
-                <a href="gnuen.html">Gnuens Mancave</a>
-                <a href="mommabear.html">Momma Bears Krea</a>
+            <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">Corners</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="gnuen.html">Gnuens Mancave</a>
+                <a role="menuitem" tabindex="-1" href="mommabear.html">Momma Bears Krea</a>
 
             </div>
         </li>
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Værd at se</a>
-            <div class="dropdown-content">
-                <a href="dining.html">Spisesteder</a>
-                <a href="sights.html">Seværdigheder</a>
+            <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">Værd at se</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="dining.html">Spisesteder</a>
+                <a role="menuitem" tabindex="-1" href="sights.html">Seværdigheder</a>
 
             </div>
         </li>
@@ -43,6 +49,9 @@
         <li><a href="about.html">Om Os</a> </li>
     </ul>
 </nav>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
 
 <form> <!-- Hvor sendes den hen? -->
 
@@ -68,8 +77,13 @@
     <input type="submit" value="Gem og fortsæt">
 </form>
 
+</main>
 
-<script>
+<button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+
+<script src="script.js"></script>
+</body>
+</html><script>
     const form2 = document.querySelector('form'); <!-- lav en konstant ved navn form2 -->
 
     form2.addEventListener('submit', (e) => { <!-- form2 lytter efter der trykkes på submit -->

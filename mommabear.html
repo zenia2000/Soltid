@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hjem - Soltid</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
 </head>
 <body>
 
@@ -15,7 +16,12 @@
         Borg29@outlook.dk</a>
         , så vender vi snarest tilbage</h3>
 
-<nav>
+<nav role="navigation" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     <ul>
         <li><a href="index.html"><img src="images/Artboard%208.png"></a> </li>
         <li><a href="booking.html">Booking</a> </li>
@@ -23,18 +29,18 @@
         <li><a href="future.html">Future</a> </li>
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn, active">Momma Bears Krea</a>
-            <div class="dropdown-content">
-                <a href="gnuen.html">Gnuens Mancave</a>
+            <button class="dropbtn active" type="button" aria-haspopup="true" aria-expanded="false">Momma Bears Krea</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="gnuen.html">Gnuens Mancave</a>
 
             </div>
         </li>
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Værd at se</a>
-            <div class="dropdown-content">
-                <a href="dining.html">Spisesteder</a>
-                <a href="sights.html">Seværdigheder</a>
+            <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">Værd at se</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="dining.html">Spisesteder</a>
+                <a role="menuitem" tabindex="-1" href="sights.html">Seværdigheder</a>
 
             </div>
         </li>
@@ -43,8 +49,22 @@
     </ul>
 </nav>
 
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+
+<div class="info-box">
+    <section>
+        <h2>🧶 Momma Bears Krea</h2>
+        <p>Indhold kommer snart...</p>
+    </section>
+</div>
+
+</main>
+
+<button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
 
 <script src="script.js"></script>
 </body>
+</html>
 </html>
 

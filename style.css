@@ -4,85 +4,264 @@ color: #DB2348; rød
 color: #dce9b2; æggeskal
 color: #FF8C11; Orange
 color: #FFBF11; Gul
-color: #563103; Brun
+color: #241909; Coffee
 }
 */
+
+:root{
+    --primary: #770755; /* purple */
+    --secondary: #FF8C11; /* orange */
+    --tertiary: #EBB161; /* lighter orange */
+    --base: #E8C99B; /*#D8CAB5; /* #EEF7C1; /* light background */
+    --text: #241909; /* dark text */
+}
+
+/* Dark mode variables */
+:root[data-theme="dark"] {
+    --primary: #FFD460; /* yellow for dark mode */
+    --secondary: #2A2A3E; /* dark slate-purple for nav in dark mode */
+    --tertiary: #5a3267; /* dark purple for better readability */
+    --base: #1A1A2E; /* dark background instead of light */
+    --text: #E8DCC8; /* light text for dark mode */
+}
+
+/* Unused colors */
+/* --red: #DB2348; */
+/* --coral: #FF6B85; */
+/* --dark: #2D2D3D; */
+/* --light-purple: #AA4EAE; */
+
+/* Utility classes for text and background colors */
+.color-primary { color: var(--primary); }
+.bg-primary { background-color: var(--primary); }
+.color-secondary { color: var(--secondary); }
+.bg-secondary { background-color: var(--secondary); }
+.color-tertiary { color: var(--tertiary); }
+.bg-tertiary { background-color: var(--tertiary); }
+.bg-base { background-color: var(--base); }
+.color-text { color: var(--text); }
+
+/* Skip link for keyboard navigation */
+.skip-link {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    background: var(--primary);
+    color: var(--base);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 10px;
+    left: 10px;
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--primary);
+    color: var(--base);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+}
+
+
+
 h1, h2, h3, h4{
-    color: #770755;
+    color: var(--primary);
 }
 
 p{
-    color: #563103;
+    color: var(--text);
 }
 
 body{
-    background-color: #dce9b2;
+    margin: 0;
+    background-color: var(--base);
+}
+
+.picSize{
+    max-width: 1200px;
+    margin: 1.25rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    align-items: stretch;
 }
 
 .picSize img{
-    height: 35vh;
+    width: 100%;
+    height: clamp(160px, 28vh, 320px);
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #FF8C11;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 li{
-    float: left;
     padding: 10px;
 }
 
 li a, .dropbtn{
     display: inline-block;
-    color: #563103;
-    background-color: #FFBF11;
-    border: #563103 solid;
+    color: var(--primary);
+    background-color: transparent;
     text-align: center;
     text-decoration: none;
     padding: 14px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 li a:hover:not(.active), .dropdown:hover .dropbtn {
-    background-color: #dce9b2;
-    color: #563103;
-    border: #563103 solid;
+    background-color: var(--tertiary);
+    color: var(--text);
 }
 
-.active{
-    background-color: #563103;
-    color: #FFBF11;
-    border: #FFBF11 solid;
+
+a.active, .dropbtn.active {
+    background-color: var(--primary);
+    color: var(--base);
+    box-shadow: inset 0 -3px 0 var(--base);
 }
 
 li.dropdown {
     display: inline-block;
+    position: relative;
+}
+
+.dropbtn::after {
+    content: " ▾";
+    font-size: 0.9rem;
+    margin-left: 6px;
+    opacity: 0.9;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #FFBF11;
+    /* small overlap to avoid mouse 'holes' */
+    top: calc(100% - 2px);
+    left: 0;
+    background-color: var(--base);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    border-radius: 8px;
+    padding: 0.15rem 0;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    z-index: 20;
+    transition: opacity 0.12s ease, transform 0.12s ease;
+    opacity: 0;
+    transform: translateY(4px);
+    border: 1px solid rgba(0,0,0,0.06);
 }
-
-.dropdown-content a {
-    color: #563103;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #FF8C11;}
 
 .dropdown:hover .dropdown-content {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    color: var(--text);
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(119,7,85,0.06); /* subtle primary tint on hover */
+    color: var(--primary);
+}
+
+/* ensure dropdown button and panel share similar radii to hide seams */
+.dropbtn {
+    border-radius: 8px;
+}
+
+.dropdown-content {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+/* Keyboard focus styles for accessibility */
+/* Use :focus-visible to avoid showing outlines on mouse click */
+a:focus-visible,
+button:focus-visible,
+.dropbtn:focus-visible,
+.booking-button a:focus-visible,
+.back-link a:focus-visible,
+.dropdown-content a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* Ensure visible focus for general focus as fallback */
+a:focus,
+button:focus,
+.dropbtn:focus,
+.booking-button a:focus,
+.back-link a:focus,
+.dropdown-content a:focus {
+    outline: 3px solid rgba(119,7,85,0.9);
+    outline-offset: 3px;
+    border-radius: 8px;
+}
+
+/* Allow keyboard to open dropdowns when focus is within the dropdown li */
+li.dropdown:focus-within .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Make sure the dropdown link items are keyboard-friendly */
+.dropdown-content a {
+    padding: 8px 12px;
 }
 
 
@@ -92,7 +271,7 @@ li a img {
 
 .dineFormat {
     display: flex;
-    border: #563103 solid;
+    
 }
 
 .dineFormat p{
@@ -101,4 +280,467 @@ li a img {
 
 .dineFormat img{
     width: 20vw;
+}
+
+/* Rules/Regler page styling */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.rules-box {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: var(--tertiary);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--primary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rules-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.rules-box section {
+    margin-bottom: 0;
+}
+
+.rules-box h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: none;
+    padding-bottom: 0;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+}
+
+.rules-box p {
+    line-height: 1.9;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: var(--text);
+}
+
+.rules-box p:last-child {
+    margin-bottom: 0;
+}
+
+.rules-list {
+    margin: 0;
+    padding: 0;
+}
+
+.rules-list p {
+    line-height: 2;
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    color: var(--text);
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.rules-list p:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-left: 0.5rem;
+}
+
+.rules-list p:last-child {
+    margin-bottom: 0;
+}
+
+.rules-list li {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    padding: 0;
+    color: var(--text);
+    float: none;
+}
+
+.rules-list li a {
+    display: block;
+}
+
+.rules-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* About page styling */
+.info-box {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: var(--tertiary);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--primary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-box section {
+    margin-bottom: 0;
+}
+
+.info-box h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: none;
+    padding-bottom: 0;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+}
+
+.info-box p {
+    line-height: 1.9;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: var(--text);
+}
+
+.info-box p:last-child {
+    margin-bottom: 0;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.back-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.back-link a:hover {
+    background-color: var(--primary);
+    color: var(--base);
+}
+
+.info-box a {
+    color: var(--primary);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.info-box a:hover {
+    color: var(--secondary);
+}
+
+.booking-button {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.booking-button a {
+    display: inline-block;
+    color: var(--base);
+    background-color: var(--primary);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary);
+}
+
+.booking-button a:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--text);
+}
+
+/* Hamburger menu button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 5px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* Mobile nav container */
+nav {
+    position: relative;
+}
+
+nav ul {
+    flex-direction: row;
+}
+
+/* Mobile-friendly responsive styles */
+@media (max-width: 768px) {
+    /* Show hamburger button */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Stack nav vertically on mobile */
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        max-height: 60px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        gap: 0;
+    }
+
+    nav ul.active {
+        max-height: 500px;
+    }
+
+    nav li {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    /* Logo should always be visible */
+    nav li:first-child {
+        max-height: none;
+    }
+
+    nav li a, nav .dropbtn {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Dropdown styling on mobile */
+    .dropdown-content {
+        position: static;
+        display: none;
+        background-color: rgba(255, 140, 17, 0.85);
+        min-width: auto;
+        top: auto;
+        left: auto;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .dropdown-content.active {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding: 10px 14px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: white;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Reduce padding/margins on mobile */
+    body {
+        font-size: 14px;
+    }
+
+    h1, h2, h3 {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+    }
+
+    p {
+        font-size: clamp(0.9rem, 4vw, 1rem);
+        line-height: 1.5;
+    }
+
+    /* Stack nav items vertically or reduce padding */
+    ul {
+        padding: 0.5rem;
+        gap: 0.25rem;
+        flex-direction: row;
+    }
+
+    li {
+        padding: 5px;
+        flex: 0 1 auto;
+    }
+
+    li a, .dropbtn {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    li img {
+        height: 40px;
+        width: auto;
+        display: inline-block;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    /* Reduce image grid column size */
+    .picSize {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .picSize img {
+        height: clamp(120px, 40vh, 200px);
+    }
+
+    /* Make boxes full width with padding */
+    .info-box, .rules-box {
+        margin: 1rem 0.5rem;
+        padding: 1rem;
+    }
+
+    .info-box section, .rules-box section {
+        padding: 0;
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Dropdown adjustments */
+    .dropdown-content {
+        min-width: 140px;
+        padding: 0.1rem 0;
+    }
+
+    .dropdown-content a {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* Reduce form field sizes */
+    input, textarea, select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 10px 8px;
+        width: 100%;
+    }
+
+    label {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+
+    /* Back link and booking button sizing */
+    .back-link a, .booking-button a {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 0.8rem 0;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    ul {
+        padding: 0.25rem;
+        gap: 0.1rem;
+    }
+
+    li {
+        padding: 3px;
+    }
+
+    li a, .dropbtn {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    li img {
+        height: 28px;
+    }
+
+    .picSize {
+        padding: 0.25rem;
+        gap: 0.25rem;
+    }
+
+    .info-box, .rules-box {
+        margin: 0.5rem;
+        padding: 0.8rem;
+    }
+
+    .page-title {
+        font-size: 1.3rem;
+        margin: 0.5rem 0;
+    }
+
+    .dropdown-content {
+        min-width: 120px;
+    }
+
+    .dropdown-content a {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+
+    /* Ensure touch targets are at least 44px */
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

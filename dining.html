@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hjem - Soltid</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
 </head>
 <body>
 
@@ -15,7 +16,12 @@
         Borg29@outlook.dk</a>
         , så vender vi snarest tilbage</h3>
 
-<nav>
+<nav role="navigation" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     <ul>
         <li><a href="index.html"><img src="images/Artboard%208.png"></a> </li>
         <li><a href="booking.html">Booking</a> </li>
@@ -23,19 +29,19 @@
         <li><a href="future.html">Future</a> </li>
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Corners</a>
-            <div class="dropdown-content">
-                <a href="gnuen.html">Gnuens Mancave</a>
-                <a href="mommabear.html">Momma Bears Krea</a>
+            <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">Corners</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="gnuen.html">Gnuens Mancave</a>
+                <a role="menuitem" tabindex="-1" href="mommabear.html">Momma Bears Krea</a>
 
             </div>
         </li>
 
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn, active">Spisesteder</a>
-            <div class="dropdown-content">
-                <a href="sights.html">Seværdigheder</a>
+            <button class="dropbtn active" type="button" aria-haspopup="true" aria-expanded="false">Spisesteder</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="sights.html">Seværdigheder</a>
 
             </div>
         </li>
@@ -44,45 +50,49 @@
     </ul>
 </nav>
 
-<h2>Spisesteder</h2>
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
 
-<div class="dineFormat">
-    <p>Perlen<br>
-    <br>
-        Grillbar i Skærbæk<br>
-    <br>
-    <a href="https://www.perlengrill-skaerbaek.dk">Link til hjemmeside</a>
-    </p>
+<h2 class="page-title">🍽️ Spisesteder</h2>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Perlen</h3>
+        <p>Grillbar i Skærbæk</p>
+        <p><a href="https://www.perlengrill-skaerbaek.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
 </div>
-<br>
-<div class="dineFormat">
-    <p>Pizza Express Skærbæk<br>
-        <br>
-        Gode pizzaer i Skærbæk<br>
-        <br>
-        <a href="https://www.pizza-express-skaerbaek.dk">Link til hjemmeside</a>
-    </p>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Pizza Express Skærbæk</h3>
+        <p>Gode pizzaer i Skærbæk</p>
+        <p><a href="https://www.pizza-express-skaerbaek.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
 </div>
-<br>
-<div class="dineFormat">
-    <p>Burger King<br>
-        <br>
-        Både i Tønder, Ribe og Aabenraa<br>
-        <br>
-        <a href="https://www.burgerking.dk">Link til hjemmeside</a>
-    </p>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">Burger King</h3>
+        <p>Både i Tønder, Ribe og Aabenraa</p>
+        <p><a href="https://www.burgerking.dk" target="_blank">Link til hjemmeside →</a></p>
+    </section>
 </div>
-<br>
-<div class="dineFormat">
-    <p>McDonald's<br>
-        <br>
-        Placeret i Tønder, Kliplev, Hadeslev og Sønderborg<br>
-        <br>
-        <a href="https://www.mcdonalds.com">Link til hjemmeside</a>
-    </p>
+
+<div class="info-box">
+    <section>
+        <h3 style="margin-top: 0; color: var(--primary);">McDonald's</h3>
+        <p>Placeret i Tønder, Kliplev, Hadeslev og Sønderborg</p>
+        <p><a href="https://www.mcdonalds.com" target="_blank">Link til hjemmeside →</a></p>
+    </section>
 </div>
+
+</main>
+
+<button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
 
 <script src="script.js"></script>
 </body>
+</html>
 </html>
 

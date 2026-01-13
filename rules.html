@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hjem - Soltid</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
 </head>
 <body>
 
@@ -15,7 +16,12 @@
         Borg29@outlook.dk</a>
         , så vender vi snarest tilbage</h3>
 
-<nav>
+<nav role="navigation" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
     <ul>
         <li><a href="index.html"><img src="images/Artboard%208.png"></a> </li>
         <li><a href="booking.html">Booking</a> </li>
@@ -23,19 +29,19 @@
         <li><a href="future.html">Future</a> </li>
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Corners</a>
-            <div class="dropdown-content">
-                <a href="gnuen.html">Gnuens Mancave</a>
-                <a href="mommabear.html">Momma Bears Krea</a>
+            <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">Corners</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="gnuen.html">Gnuens Mancave</a>
+                <a role="menuitem" tabindex="-1" href="mommabear.html">Momma Bears Krea</a>
 
             </div>
         </li>
 
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Værd at se</a>
-            <div class="dropdown-content">
-                <a href="dining.html">Spisesteder</a>
-                <a href="sights.html">Seværdigheder</a>
+            <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">Værd at se</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" tabindex="-1" href="dining.html">Spisesteder</a>
+                <a role="menuitem" tabindex="-1" href="sights.html">Seværdigheder</a>
 
             </div>
         </li>
@@ -44,43 +50,55 @@
     </ul>
 </nav>
 
-<h1>VELKOMMEN!</h1>
-<p>Velkommen til vor lille sommerhus i Borg, vi kalder det “Borgen”.<br>
-    Håber at I kommer til at nyde jeres ophold her, ligeså meget som vi gør.<br>
-<br>
-    Da dette er en landejendom, kan duften af dyr forekomme, der er næsten altid livlig fuglesang og lidt lyd fra nærtgående høns og ænder.<br>
-    Huset har 2 varmekilder; Pillebrændeovn i køkken og varmepumpe i stuen.<br>
-    Eltavle forefindes i vaskerum, hvor også varmtvandsbeholderen er placeret.<br>
-    Benyt venligst hjemmesko, gulvet i stuen kan godt være lidt ujævnt m.m.<br>
-</p>
-<p>Der forefindes træpiller i skuret ved carporten. Nøglen til skuret hænger ved døren, den har pink nøglepynt.<br>
-    Der er en nøgleboks placeret i carporten, som I bedes lægge nøglen retur i, ved afrejse.<br>
-</p>
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
 
-<h4>
-    Ved ankomst:<br>
-</h4>
-    <p>
-    *	Tænd vandvarmeren i vaskerummet<br>
-    *	Sluk evt. varmepumpen i stuen<br>
-    *	Tænd pillefyret<br>
-    * 	Sæt skraldeposer (i 2. skuffe) i spande<br>
-    *	Dyner og puder ligger i sofabordet &  sengetøj ligger i skabet bag spisebordet.<br>
-    *	Der er håndklæder i skabet på badeværelset, samt ekstra tandbørster m.m. til salg, hvis man har glemt.<br>
-    *	Tøm gerne postkassen<br>
-<br>
-</p>
+<h1 class="page-title">🏡 VELKOMMEN!</h1>
 
-<h4>
-    AFFALD:	VI SORTERER :-)<br>
-</h4>
+<div class="rules-box">
+    <section>
+        <p>Velkommen til vor lille sommerhus i Borg, vi kalder det "Borgen".</p>
+        <p>Håber at I kommer til at nyde jeres ophold her, ligeså meget som vi gør.</p>
+        
+        <p>Da dette er en landejendom, kan duften af dyr forekomme, der er næsten altid livlig fuglesang og lidt lyd fra nærtgående høns og ænder.</p>
+        <p>Huset har 2 varmekilder; Pillebrændeovn i køkken og varmepumpe i stuen.</p>
+        <p>Eltavle forefindes i vaskerum, hvor også varmtvandsbeholderen er placeret.</p>
+        <p>Benyt venligst hjemmesko, gulvet i stuen kan godt være lidt ujævnt m.m.</p>
+        
+        <p>Der forefindes træpiller i skuret ved carporten. Nøglen til skuret hænger ved døren, den har pink nøglepynt.</p>
+        <p>Der er en nøgleboks placeret i carporten, som I bedes lægge nøglen retur i, ved afrejse.</p>
+    </section>
+</div>
 
-<p>
-    Der er placeret 3 store skraldespande i indkørslen.<br>
-    <strong>Her sorteres: Glas, Metal, Plast, Pap, Mad & Restaffald.</strong><br>
-    Der er også sorteringsanordninger i huset;<br>
-    Ved vasken er der restaffald og madaffald - poser er i diskens anden skuffe. Dåser uden pant lægges i skraldekurven op ad disken. Plast lægges i en af de sorte “sække” som står ved soveværelsesdøren, den anden sæk bruges til pap. Ting med pant, samt glas, sættes i sort trækasse ovenpå skraldestativet.<br>
-</p>
+<div class="rules-box">
+    <section>
+        <h2>✓ Ved ankomst:</h2>
+        <div class="rules-list">
+            <p>• Tænd vandvarmeren i vaskerummet</p>
+            <p>• Sluk evt. varmepumpen i stuen</p>
+            <p>• Tænd pillefyret</p>
+            <p>• Sæt skraldeposer (i 2. skuffe) i spande</p>
+            <p>• Dyner og puder ligger i sofabordet &amp; sengetøj ligger i skabet bag spisebordet.</p>
+            <p>• Der er håndklæder i skabet på badeværelset, samt ekstra tandbørster m.m. til salg, hvis man har glemt.</p>
+            <p>• Tøm gerne postkassen</p>
+        </div>
+    </section>
+</div>
+
+<div class="rules-box">
+    <section>
+        <h2>♻️ AFFALD: VI SORTERER :-)</h2>
+        <p>Der er placeret 3 store skraldespande i indkørslen.</p>
+        <p><strong>Her sorteres: Glas, Metal, Plast, Pap, Mad &amp; Restaffald.</strong></p>
+        <p>Der er også sorteringsanordninger i huset:</p>
+        <p>Ved vasken er der restaffald og madaffald - poser er i diskens anden skuffe. Dåser uden pant lægges i skraldekurven op ad disken. Plast lægges i en af de sorte "sække" som står ved soveværelsesdøren, den anden sæk bruges til pap. Ting med pant, samt glas, sættes i sort trækasse ovenpå skraldestativet.</p>
+    </section>
+</div>
+
+</main>
+
+<button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+
 <script src="script.js"></script>
 </body>
 </html>
